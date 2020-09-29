@@ -124,7 +124,7 @@
         if (!calcReady) {
           //console.log(this.value);
           firstNumber = firstNumber + this.value;
-          $("#first-number").text(firstNumber) 
+          $("#first-number").text(firstNumber)
         } else {
           secondNumber = secondNumber + this.value;
           $("#second-number").text(secondNumber)
@@ -143,12 +143,35 @@
         firstNum = Number(firstNumber);
         secondNum = Number(secondNumber);
         times = function (firstNum, secondNum) {
-            result = firstNum * secondNum;
-            console.log(`This is the result ${result}`);
-            $("#result").text(result);
-            
-          }
-        
+          result = firstNum * secondNum;
+          console.log(`This is the result ${result}`);
+          $("#result").text(result);
+
+        }
+        exponent = function (firstNum, secondNum) {
+          result = firstNum ^ secondNum;
+          console.log(`This is the result ${result}`);
+          $("#result").text(result);
+
+        }
+        add = function (firstNum, secondNum) {
+          result = firstNum + secondNum;
+          console.log(`This is the result ${result}`);
+          $("#result").text(result);
+
+        }
+        subtract = function (firstNum, secondNum) {
+          result = firstNum - secondNum;
+          console.log(`This is the result ${result}`);
+          $("#result").text(result);
+
+        }
+        divide = function (firstNum, secondNum) {
+          result = firstNum / secondNum;
+          console.log(`This is the result ${result}`);
+          $("#result").text(result);
+
+        }
         console.log(` this is firstNum :: ${firstNum}`);
         console.log(` this is secondNum :: ${secondNum}`);
         console.log(`this is operator --${operator}-- in the equals call`);
@@ -156,8 +179,19 @@
         if (operator === "times") {
           console.log("Result was clicked");
           times(firstNum, secondNum);
-
-        }
+        } else if (operator === "minus") {
+          console.log("Result was clicked");
+          subtract(firstNum, secondNum);
+        } else if (operator === "power") {
+          console.log("Result was clicked");
+          exponent(firstNum, secondNum);
+        } else if (operator === "divide") {
+          console.log("Result was clicked");
+          divide(firstNum, secondNum);
+        } else if (operator === "add") {
+          console.log("Result was clicked");
+          add(firstNum, secondNum);
+        };
 
       });
 
