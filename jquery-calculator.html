@@ -139,13 +139,33 @@
     <script type="text/javascript">
 
       $(document).ready(function() {
+        var firstNumber = '';
+        var operator = '';
+        var secondNumber = '';
+        var calcReady = false;
+        console.log(firstNumber);
 
-      // Your code here...
-      $(".btn").click(function() {
-          console.log("Ive been clicked");
+      // When any button is clicked 
+      $(".number").click(function() {
+        if(!calcReady) {
+        console.log(this.value);
+          firstNumber = firstNumber + this.value;
+          $("#first-number").text(firstNumber)
+          // if .this() 
+        } else {
+          secondNumber = secondNumber + this.value;
+          $("#second-number").text(secondNumber)
+
+        }
       });
-
-
+    
+      $(".operator").click(function() {
+          console.log(this.value);
+          operator = this.value;
+          $("#operator").text(operator);
+          calcReady = true;
+      });
+      
       });
     </script>
   </body>
